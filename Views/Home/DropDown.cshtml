@@ -1,0 +1,18 @@
+﻿@model LoginFormASPCore6.Models.EmployeeModel
+
+@{
+    ViewData["Title"] = "DropDown";
+}
+
+<h2>Dropdown</h2>
+<br />
+
+<form asp-controller="Home" asp-action="Index" method="post">
+    <label class="form-control">Select Employee name</label>
+    <select asp-for="Id" class="form-control" asp-items="@(new SelectList(Model.Employeelist,"Value","Text"))">
+    </select>
+
+    <br />
+    <input type="submit" value="Submit" class="btn btn-success" />
+</form>
+
